@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
@@ -12,6 +13,7 @@ import com.google.android.material.textfield.TextInputEditText
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private val tag = "MainActivity"
     lateinit var nameInput: TextInputEditText
     lateinit var advance: Button
     lateinit var container: ConstraintLayout
@@ -51,13 +53,13 @@ class MainActivity : AppCompatActivity() {
         //implementar este método para saber si el usuario ya ha entrado a la aplicación y ha visto
         //la pantalla de bienvenida. Este método permite decidir que pantalla se muestra después de presionar Ingresar
         //recorra la lista de usuarios
-        Log.d("AAAAA")
+        Log.d(tag, "AAAAA")
         return stringSet.contains(name_input.text.toString())
     }
 
     private fun saveUser(userName: String) {
         val setString = preferences.getStringSet("Usuarios", mutableSetOf())
-        Log.d("AAAA")
+        Log.d(tag, "AAAA")
         setString.add(userName)
         preferences.edit().putStringSet("Usuarios", setString).apply()
     }
