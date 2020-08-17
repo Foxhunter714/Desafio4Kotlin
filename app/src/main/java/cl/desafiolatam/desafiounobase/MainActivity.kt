@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         //implementar este método para saber si el usuario ya ha entrado a la aplicación y ha visto
         //la pantalla de bienvenida. Este método permite decidir que pantalla se muestra después de presionar Ingresar
         //recorra la lista de usuarios
-        Log.d(tag, "C")
+        Log.d(tag, "D")
         return stringSet.contains(name_input.text.toString())
     }
 
