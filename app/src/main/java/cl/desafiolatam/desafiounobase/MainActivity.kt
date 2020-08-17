@@ -56,7 +56,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun saveUser(userName: String) {
         val setString = preferences.getStringSet("Usuarios", mutableSetOf())
+        Log.d("AAAA")
         setString.add(userName)
         preferences.edit().putStringSet("Usuarios", setString).apply()
     }
 }
+
